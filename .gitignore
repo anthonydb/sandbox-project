@@ -2,3 +2,4 @@
 *.db
 local_settings.py
 __old__*
+*.txt
