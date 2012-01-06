@@ -2,6 +2,9 @@
 from django.db import models
 #from django.db.models import Count, Max
 
+#this is a test of using a model manager
+#to pull a random quote
+
 #class QuoteManager(models.Manager):
 #    def pull_random_quote(self):
 #        count = self.all().aggregate(count=Count('id'))['count']
