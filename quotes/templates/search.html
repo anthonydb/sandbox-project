@@ -1,0 +1,32 @@
+{% extends "quotes_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+    <h1>Search Quotes</h1>
+    <form method="post" action="">{% csrf_token %}
+        Search for:<br/>
+        {{ form.quote }}<br/>
+        <p><input type="submit" value="Search"></p>
+    </form>
+    <br/>
+    {% if results_list %}
+    <h3>Search results:</h3>
+    <ul>
+        {% for result in results_list %}
+            {% if result != "None" %} 
+            <li>{{ result }} // {% for category in result.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
+                {% if forloop.last %}{% else %}
+                {% ifequal forloop.revcounter0 1 %}and {% else %}, {% endifequal %}
+                {% endif %}
+                {% endfor %} | <a href="{{ result.get_absolute_url }}">PermaLink</a>
+            <br />
+            <a href="{{ result.author.get_absolute_url }}">{{ result.author }}</a>
+           </li>
+           {% else %}
+           <li>No results matched your query.</li>
+           {% endif %}
+        {% endfor %}
+     </ul>
+     {% endif %}
+{% endblock %}

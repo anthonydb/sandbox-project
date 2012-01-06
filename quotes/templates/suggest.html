@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}quotes.css" />
+    <title>Words on Writing{% block title %}{% endblock %}</title>
+</head>
+<body>
+     <script type="text/javascript" src="{{ STATIC_URL }}js/utils.js"></script>
+       <div id="container">
+       <div id="header">
+       </div>
+    
+       <h1>Suggest a Quote</h1>
+           <form method="post" action="" name="suggestForm">{% csrf_token %}
+           Quote:<br/>
+           {{ form.item }}<br/>
+           Source:<br/>
+           {{ form.source }}<br/>
+           Your Name:<br/>
+           {{ form.name }}<br/>
+           Your Email:<br/>
+           {{ form.email }}<br/>
+           For validation: What color is the clear sky?<br/>
+           <input type="text" name="validateBox">
+           <p><input type="submit" onclick="validtest()" value="Suggest"></p>
+           </form>      
+        <div id="footer">
+              <div id="footer-title">
+              Words on Writing
+              </div>
+               <div id="footer-links">
+               <a href="{% url home %}">Home</a> ‧ <a href="{% url authors %}">Authors</a> ‧ <a href="{% url categories %}">Categories</a> ‧ <a href="{% url search %}">Search</a> ‧ <a href="{% url suggest %}">Suggest</a></br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>    
+    
+    
+    
+    
+

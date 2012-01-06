@@ -1,0 +1,32 @@
+{% extends "quotes_base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+
+<div id="list">
+   <div id="sectiondescriptor">
+      {% for category_name in categories %}
+         <b>{{ category_name.category }}</b>
+      {% endfor %}
+   </div>
+   <ul>
+      {% regroup categories_quote_list by author as categories_quotes_by_author %}
+         {% for author in categories_quotes_by_author %}
+            <li>
+               <b><a href="{{ author.grouper.get_absolute_url }}">{{ author.grouper }}</a></b>:<br/>
+               <ul>
+                  {% for item in author.list %}
+                     <li>{{ item.quote }} <a href="{{ item.get_absolute_url }}">Link</a> | 
+                        {% for category in item.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
+                           {% if forloop.last %}{% else %}
+                           {% ifequal forloop.revcounter0 1 %}and {% else %}, {% endifequal %}
+                           {% endif %}
+                        {% endfor %} 
+                     </li>
+                  {% endfor %}
+               </ul>
+            </li>
+         {% endfor %}
+   </ul>
+{% endblock %}

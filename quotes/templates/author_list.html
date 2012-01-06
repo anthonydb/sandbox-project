@@ -1,0 +1,17 @@
+{% extends "quotes_base.html" %}
+
+{% block title %}{% endblock %}
+
+
+{% block content %}
+    <div id="list">
+       <div id="sectiondescriptor">
+          <b>Authors</b>
+       </div>
+    <ul>
+        {% for author in authors_list %}
+            <li><a href="{{ author.get_absolute_url }}">{{ author.lastname }}, {{ author.firstname }}</a>. {{ author.brfbio }}</li>
+        {% endfor %}
+     </ul>
+     </div>
+{% endblock %}

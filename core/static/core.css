@@ -1,0 +1,63 @@
+body
+{
+   margin: 0;
+   font-family:"Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+   font-size: 12px;  
+   text-align: left;
+   vertical-align: top;
+   background: #FFFFFF;
+}
+
+h1
+{
+	font-size: 46px;
+	letter-spacing: -2px;
+	padding: 0 0 10px 0;
+}
+
+
+a:link, a:visited
+{
+	text-decoration: underline;
+	color: #000000;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+p
+{
+	padding: 10px 0 0 0;
+}
+
+#container
+{
+	margin: 10px auto 0 auto;
+    width: 1000px;  
+	background: #FFFFFF;
+}
+
+#main
+{
+   font-family:Georgia;
+   font-size: 24px;
+   letter-spacing: -1px;
+   text-align: left;
+   width: 900px;
+}
+
+#main ul
+{
+	list-style-type: none;
+	margin-left: 0;
+    padding-left: 1em;
+	text-indent: -1em;
+}
+
+#main ul li
+{
+	padding: 4px 0 33px 0;
+	line-height: 30px;
+}
