@@ -13,18 +13,20 @@
     
        <h1>Suggest a Quote</h1>
            <form method="post" action="" name="suggestForm">{% csrf_token %}
-           Quote:<br/>
+           Quote and its author:<br/>
            {{ form.item }}<br/>
-           Source:<br/>
+           Where did you see it? Include URL if possible:<br/>
            {{ form.source }}<br/>
            Your Name:<br/>
            {{ form.name }}<br/>
            Your Email:<br/>
            {{ form.email }}<br/>
-           For validation: What color is the clear sky?<br/>
+           To reduce my spam burden: What color is the clear daytime sky?<br/>
            <input type="text" name="validateBox">
-           <p><input type="submit" onclick="validtest()" value="Suggest"></p>
-           </form>      
+           <div id="message">
+           </div>
+           <p><input type="submit" onclick="return validtest();" value="Suggest"></p>
+           </form>
         <div id="footer">
               <div id="footer-title">
               Words on Writing

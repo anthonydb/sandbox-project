@@ -173,3 +173,11 @@ p
     padding: 6px 0 0 0;
 }
 
+#message
+{
+    font-family: Arial;
+    color: #F80000;
+    width: 400px;
+    height: 14px;
+    margin: 6px 0 6px 0;
+}
