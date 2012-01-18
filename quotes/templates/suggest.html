@@ -12,14 +12,16 @@
        </div>
     
        <h1>Suggest a Quote</h1>
+       Tell us a great quote about music, writing or the arts. If we like it, we'll add it here.<br/> 
+           <br/>
            <form method="post" action="" name="suggestForm">{% csrf_token %}
-           Quote and its author:<br/>
+           The quote and its author:<br/>
            {{ form.item }}<br/>
            Where did you see it? Include URL if possible:<br/>
            {{ form.source }}<br/>
-           Your Name:<br/>
+           Your name (will not be published):<br/>
            {{ form.name }}<br/>
-           Your Email:<br/>
+           Your email so we can follow up:<br/>
            {{ form.email }}<br/>
            To reduce my spam burden: What color is the clear daytime sky?<br/>
            <input type="text" name="validateBox">
