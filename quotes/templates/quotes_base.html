@@ -3,9 +3,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}quotes.css" />
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+      // Hide the view div
+      $('div.view').hide();
+      // toggle
+      $('div.slide').toggle(function() {
+      $(this).siblings('div.view').fadeIn('slow');
+      }, function() {
+      $(this).siblings('div.view').fadeOut('fast');
+      return false;
+      });
+      });
+      </script>
     <title>Words on Writing{% block title %}{% endblock %}</title>
 </head>
 <body>
+      <div class="slide" style="cursor: pointer;">Show/Hide</div>
+      <div class="view">
+         <a href="{% url home %}">Home</a><br/>
+         <a href="{% url authors %}">Authors</a><br/>
+         <a href="{% url categories %}">Categories</a><br/>
+         <a href="{% url search %}">Search</a><br/>
+         <a href="{% url suggest %}">Suggest</a></br>
+      </div> 
+       
        <div id="container">
        <div id="header">
        </div>
