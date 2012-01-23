@@ -68,4 +68,9 @@ def CategoriesQuotesView(request, categoryslug):
 # Submit thanks
 
 class submit_thanks(TemplateView):
-    template_name = 'suggest_thanks.html' 
+    template_name = 'suggest_thanks.html'
+
+# About
+
+class AboutPageView(TemplateView):
+    template_name = 'about.html'
