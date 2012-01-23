@@ -6,22 +6,23 @@
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
-      // Hide the view div
-      $('div.view').hide();
-      // toggle
-      $('div.slide').toggle(function() {
-      $(this).siblings('div.view').fadeIn('slow');
-      }, function() {
-      $(this).siblings('div.view').fadeOut('fast');
-      return false;
-      });
+         // Hide the view div
+         $('div.view').hide();
+         // toggle
+         $('div.slide').toggle(function() {
+            $(this).siblings('div.view').fadeIn('slow');
+            }, function() {
+            $(this).siblings('div.view').fadeOut('fast');
+            return false;
+            });
       });
       </script>
     <title>Words on Writing{% block title %}{% endblock %}</title>
 </head>
 <body>
-      <div class="slide" style="cursor: pointer;">Show/Hide</div>
+      <div class="slide" style="cursor: pointer;">+</div>
       <div class="view">
+         <h2>Words on Art</h2>
          <a href="{% url home %}">Home</a><br/>
          <a href="{% url authors %}">Authors</a><br/>
          <a href="{% url categories %}">Categories</a><br/>
@@ -36,12 +37,7 @@
             {% block content %}
             {% endblock %}
         <div id="footer">
-              <div id="footer-title">
-              Words on Writing
-              </div>
-               <div id="footer-links">
-               <a href="{% url home %}">Home</a> ‧ <a href="{% url authors %}">Authors</a> ‧ <a href="{% url categories %}">Categories</a> ‧ <a href="{% url search %}">Search</a> ‧ <a href="{% url suggest %}">Suggest</a></br>
-            </div>
+        </div>
         </div>
     </div>
 </body>

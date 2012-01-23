@@ -1,5 +1,4 @@
-body
-{
+body {
    margin: 0;
    font-family:"Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
    font-size: 12px;  
@@ -8,41 +7,59 @@ body
    background: #FFFFFF;
 }
 
-h1
-{
-	font-size: 32px;
-	letter-spacing: -2px;
-	padding: 0 0 0 0;
-    margin: 0 0 0 0;
+h1 {
+   font-size: 32px;
+   letter-spacing: -2px;
+   padding: 0 0 0 0;
+   margin: 0 0 0 0;
 }
 
+h2 {
+   font-size: 14px;
+   letter-spacing: -1px;
+   color: #000000;
+   margin: 0 0 2px 0;
+}
 
-a:link, a:visited
-{
+a:link, a:visited {
 	text-decoration: underline;
 	color: #000000;
 }
 
-a:hover
-{
+a:hover {
 	text-decoration: underline;
 }
 
-p
-{
+p {
 	padding: 10px 0 0 0;
 }
 
-#container
-{
+#container {
 	margin: 10px auto 0 auto;
     width: 1000px;
     height: 100%;
 	background: #FFFFFF;
 }
 
-#header
-{
+/* Menu div classes */
+.slide {
+   font-family: Arial;
+   font-size: 90px;
+   float: right;
+   padding: 0 20px 0 20px;
+   margin: 0 20px 0 0;
+   color: #FFFFFF;
+   background-color: #000000;
+}
+.view {
+   font-family: Arial;
+   float: right;
+   color: #FFFFFF;
+   margin: 0 10px; 0 0;
+   /*background-color: #000000;*/
+}
+
+#header {
     width: 980px;
     height: 50px;
     font-family: Arial;
@@ -52,23 +69,20 @@ p
     text-align: right;
 }
 
-#markl
-{
+#markl {
     float: left;
     font-size:600%;
     margin: 0 6px 0 0;
     color: #E0EEEE;
 }
-#markr
-{
+#markr {
     float:right;
     line-height: 120px;
     font-size:600%;
     color: #E0EEEE;
 }
 
-#quote
-{
+#quote {
    font-family:Georgia;
    font-size: 48px;
    letter-spacing: -1px;
@@ -77,23 +91,19 @@ p
    padding: 120px 0 180px 0;
 }
 
-#quote ul
-{
+#quote ul {
 	list-style-type: none;
 	margin-left: 0;
     padding-left: 1em;
 	text-indent: -1em;
 }
 
-#quote ul li
-{
+#quote ul li {
 	padding: 4px 0 33px 0;
 	line-height: 50px;
 }
 
-
-#attribute
-{
+#attribute {
    font-family:Georgia;
    font-size: 28px;
    letter-spacing: -1px;
@@ -101,8 +111,7 @@ p
    padding: 8px 50px 0 0;
 }
 
-#tag
-{
+#tag {
    font-family: Arial;
    font-size: 12px;
    letter-spacing: -1px;
@@ -112,14 +121,11 @@ p
 
 }
 
-#tag a
-{
+#tag a {
    /*color: #a6bddb;*/
-
 }
 
-#list
-{
+#list {
     font-family: Arial;
     font-size: 14px;
     text-align: left;
@@ -128,22 +134,19 @@ p
 
 }
 
-#list ul
-{
+#list ul {
 	list-style-type: none;
 	margin-left: 0;
     padding-left: 1em;
 	text-indent: -1em;
 }
 
-#list ul li
-{
+#list ul li {
 	padding: 4px 0 3px 0;
 	line-height: 15px;
 }
 
-#sectiondescriptor
-{
+#sectiondescriptor {
    font-family: Arial;
    font-size: 20px;
    letter-spacing: -1px;
@@ -151,31 +154,12 @@ p
 }
 
 
-#footer
-{
+#footer {
     width: 980px;
     height: 180px;
 }
 
-#footer-title
-{
-    width: 978px;
-    text-align: center;
-    font-family: Georgia;
-    font-size: 20px;
-}
-
-#footer-links
-{
-    font-family: Arial;
-    font-size: 12px;
-    text-align: center;
-    width: 978px;
-    padding: 6px 0 0 0;
-}
-
-#message
-{
+#message {
     font-family: Arial;
     color: #F80000;
     width: 400px;
