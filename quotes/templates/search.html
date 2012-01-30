@@ -3,11 +3,11 @@
 {% block title %}{% endblock %}
 
 {% block content %}
-    <h1>Search Quotes</h1>
+    <h2>Search Words on Art</h2>
     <form method="post" action="">{% csrf_token %}
         Search for:<br/>
         {{ form.quote }}<br/>
-        <p><input type="submit" value="Search"></p>
+        <p><input class="button" type="submit" value="Search"></p>
     </form>
     <br/>
     {% if results_list %}
@@ -15,11 +15,13 @@
     <ul>
         {% for result in results_list %}
             {% if result != "None" %} 
-            <li>{{ result }} // {% for category in result.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
+            <li>{{ result }} <span id="tagelements"><a href="{{ result.get_absolute_url }}">&#182;</a> | 
+            {% for category in result.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
                 {% if forloop.last %}{% else %}
                 {% ifequal forloop.revcounter0 1 %}and {% else %}, {% endifequal %}
                 {% endif %}
-                {% endfor %} | <a href="{{ result.get_absolute_url }}">PermaLink</a>
+                {% endfor %} 
+            </span>
             <br />
             <a href="{{ result.author.get_absolute_url }}">{{ result.author }}</a>
            </li>

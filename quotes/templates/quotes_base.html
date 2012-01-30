@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}quotes.css" />
+    <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
@@ -23,12 +24,14 @@
       <div class="slide" style="cursor: pointer;">+</div>
       <div class="view">
          <h2>Words on Art</h2>
-         <a href="{% url home %}">Home</a><br/>
-         <a href="{% url authors %}">Authors</a><br/>
-         <a href="{% url categories %}">Categories</a><br/>
-         <a href="{% url search %}">Search</a><br/>
-         <a href="{% url suggest %}">Suggest</a></br>
-         <a href="{% url about %}">About</a><br/>
+         <div class="viewlist">
+           <a href="{% url home %}">Home</a><br/>
+           <a href="{% url authors %}">Authors</a><br/>
+           <a href="{% url categories %}">Categories</a><br/>
+           <a href="{% url search %}">Search</a><br/>
+           <a href="{% url suggest %}">Suggest</a></br>
+           <a href="{% url about %}">About</a><br/>
+         </div>
       </div> 
        
        <div id="container">

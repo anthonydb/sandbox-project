@@ -1,7 +1,7 @@
 body {
    margin: 0;
-   font-family:"Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
-   font-size: 12px;  
+   font-family: 'Lusitana', Georgia, Arial, sans-serif;
+   font-size: 14px;  
    text-align: left;
    vertical-align: top;
    background: #FFFFFF;
@@ -15,7 +15,9 @@ h1 {
 }
 
 h2 {
-   font-size: 14px;
+   font-family: 'Lusitana', Arial;
+   font-size: 24px;
+   font-weight: 700;
    letter-spacing: -1px;
    color: #000000;
    margin: 0 0 2px 0;
@@ -34,6 +36,12 @@ p {
 	padding: 10px 0 0 0;
 }
 
+input.button {
+    font-family: 'Lusitana', Arial;
+    font-size: 20px;
+    font-weight: 700;
+}
+
 #container {
 	margin: 10px auto 0 auto;
     width: 1000px;
@@ -43,20 +51,24 @@ p {
 
 /* Menu div classes */
 .slide {
-   font-family: Arial;
+   font-family: 'Lusitana', Arial;
    font-size: 90px;
    float: right;
-   padding: 0 20px 0 20px;
-   margin: 0 20px 0 0;
+   padding: 0 20px 20px 20px;
+   margin: 0 20px 0 10px;
    color: #FFFFFF;
-   background-color: #000000;
+   background-color: #092E20;
 }
 .view {
-   font-family: Arial;
+   font-family: 'Lusitana', Arial;
+   line-height: 17px;
    float: right;
    color: #FFFFFF;
-   margin: 0 10px; 0 0;
+   margin: 10px 10px; 0 0;
    /*background-color: #000000;*/
+}
+.viewlist {
+   padding: 6px 0 0 6px;
 }
 
 #header {
@@ -68,6 +80,8 @@ p {
     font-weight: bold;
     text-align: right;
 }
+
+/* Large quote style */
 
 #markl {
     float: left;
@@ -83,29 +97,19 @@ p {
 }
 
 #quote {
-   font-family:Georgia;
+   font-family: 'Lusitana', Georgia;
    font-size: 48px;
+   font-weight: 400;
    letter-spacing: -1px;
    text-align: left;
    width: 900px;
    padding: 120px 0 180px 0;
 }
 
-#quote ul {
-	list-style-type: none;
-	margin-left: 0;
-    padding-left: 1em;
-	text-indent: -1em;
-}
-
-#quote ul li {
-	padding: 4px 0 33px 0;
-	line-height: 50px;
-}
-
 #attribute {
-   font-family:Georgia;
+   font-family: 'Lusitana', Georgia;
    font-size: 28px;
+   font-weight: 400;
    letter-spacing: -1px;
    text-align: right;
    padding: 8px 50px 0 0;
@@ -113,20 +117,26 @@ p {
 
 #tag {
    font-family: Arial;
-   font-size: 12px;
+   font-size: 14px;
    letter-spacing: -1px;
    text-align: right;
    padding: 6px 50px 0 0;
-   /*color: #A6BDDB;*/
-
+   color: #989898;
 }
 
 #tag a {
-   /*color: #a6bddb;*/
+   text-decoration: none;
+   color: #989898;
+}
+#tag a:hover {
+   text-decoration: underline;
+   color: #989898;
 }
 
+/* Item list style */
+
 #list {
-    font-family: Arial;
+    font-family: 'Lusitana' Georgia, Arial;
     font-size: 14px;
     text-align: left;
     width: 900px;
@@ -143,16 +153,31 @@ p {
 
 #list ul li {
 	padding: 4px 0 3px 0;
-	line-height: 15px;
+	line-height: 17px;
 }
 
 #sectiondescriptor {
-   font-family: Arial;
+   font-family: 'Lusitana', Georgia, Arial;
    font-size: 20px;
    letter-spacing: -1px;
    text-align: left;
 }
 
+#tagelements {
+   color: #989898;
+}
+
+#tagelements a {
+   text-decoration: none;
+   color: #989898;
+}
+#tagelements a:hover {
+   text-decoration: underline;
+   color: #989898;
+}
+
+
+/* Miscellany */
 
 #footer {
     width: 980px;
