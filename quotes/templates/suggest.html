@@ -26,7 +26,6 @@
       <div class="view">
          <h2>Words on Art</h2>
          <div class="viewlist">
-           <a href="{% url home %}">Home</a><br/>
            <a href="{% url authors %}">Authors</a><br/>
            <a href="{% url categories %}">Categories</a><br/>
            <a href="{% url search %}">Search</a><br/>
@@ -44,18 +43,18 @@
            <br/>
            <form method="post" action="" name="suggestForm">{% csrf_token %}
            The quote and its author:<br/>
-           {{ form.item }}<br/>
+           {{ form.item }}<br/><br/>
            Where did you see it? Include URL if possible:<br/>
-           {{ form.source }}<br/>
+           {{ form.source }}<br/><br/>
            Your name (will not be published):<br/>
-           {{ form.name }}<br/>
+           {{ form.name }}<br/><br/>
            Your email so we can follow up:<br/>
-           {{ form.email }}<br/>
+           {{ form.email }}<br/><br/>
            To reduce my spam burden: What color is the clear daytime sky?<br/>
            <input type="text" name="validateBox">
            <div id="message">
            </div>
-           <p><input class="button" type="submit" onclick="return validtest();" value="Suggest"></p>
+           <input class="button" type="submit" onclick="return validtest();" value="Suggest">
            </form>
         <div id="footer">
         </div>

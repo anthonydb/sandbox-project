@@ -1,7 +1,7 @@
 body {
    margin: 0;
    font-family: 'Lusitana', Georgia, Arial, sans-serif;
-   font-size: 14px;  
+   font-size: 16px;  
    text-align: left;
    vertical-align: top;
    background: #FFFFFF;
@@ -57,11 +57,11 @@ input.button {
    padding: 0 20px 20px 20px;
    margin: 0 20px 0 10px;
    color: #FFFFFF;
-   background-color: #092E20;
+   background-color: #E0EEEE;
 }
 .view {
    font-family: 'Lusitana', Arial;
-   line-height: 17px;
+   line-height: 20px;
    float: right;
    color: #FFFFFF;
    margin: 10px 10px; 0 0;
@@ -74,9 +74,6 @@ input.button {
 #header {
     width: 980px;
     height: 50px;
-    font-family: Arial;
-    font-size: 20px;
-    margin: 0 20px 0 0;
     font-weight: bold;
     text-align: right;
 }
@@ -86,7 +83,7 @@ input.button {
 #markl {
     float: left;
     font-size:600%;
-    margin: 0 6px 0 0;
+    margin: 0 6px 700px 0;
     color: #E0EEEE;
 }
 #markr {
@@ -103,7 +100,7 @@ input.button {
    letter-spacing: -1px;
    text-align: left;
    width: 900px;
-   padding: 120px 0 180px 0;
+   padding: 90px 0 180px 0;
 }
 
 #attribute {
@@ -137,10 +134,10 @@ input.button {
 
 #list {
     font-family: 'Lusitana' Georgia, Arial;
-    font-size: 14px;
+    font-size: 16px;
     text-align: left;
     width: 900px;
-    padding: 120px 0 180px 0;
+    padding: 90px 0 180px 0;
 
 }
 
@@ -153,12 +150,12 @@ input.button {
 
 #list ul li {
 	padding: 4px 0 3px 0;
-	line-height: 17px;
+	line-height: 18px;
 }
 
 #sectiondescriptor {
    font-family: 'Lusitana', Georgia, Arial;
-   font-size: 20px;
+   font-size: 22px;
    letter-spacing: -1px;
    text-align: left;
 }

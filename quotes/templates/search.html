@@ -18,7 +18,7 @@
             <li>{{ result }} <span id="tagelements"><a href="{{ result.get_absolute_url }}">&#182;</a> | 
             {% for category in result.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
                 {% if forloop.last %}{% else %}
-                {% ifequal forloop.revcounter0 1 %}and {% else %}, {% endifequal %}
+                {% ifequal forloop.revcounter0 1 %}&amp; {% else %}, {% endifequal %}
                 {% endif %}
                 {% endfor %} 
             </span>
