@@ -31,7 +31,7 @@ class Author(models.Model):
         return self.displayname
 
     def get_absolute_url(self):
-        return "/quotes/authors/%s/" % (self.slug)
+        return "/words/authors/%s/" % (self.slug)
 
 class Categories(models.Model):
     category = models.CharField(max_length=100)
@@ -45,7 +45,7 @@ class Categories(models.Model):
         return self.category
 
     def get_absolute_url(self):
-        return "/quotes/categories/%s/" % (self.slug)
+        return "/words/categories/%s/" % (self.slug)
 
 class Quote(models.Model):
     quote = models.TextField()
@@ -60,7 +60,7 @@ class Quote(models.Model):
         return self.quote
 
     def get_absolute_url(self):
-        return "/quotes/%s/" % (self.slug)
+        return "/words/%s/" % (self.slug)
 
 class Submission(models.Model):
     item = models.TextField()
