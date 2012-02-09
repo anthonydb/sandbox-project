@@ -30,8 +30,9 @@ class Author(models.Model):
     def __unicode__(self):
         return self.displayname
 
+    @models.permalink
     def get_absolute_url(self):
-        return "/words/authors/%s/" % (self.slug)
+        return ('author_quotes', (), { 'authorslug': self.slug })
 
 class Categories(models.Model):
     category = models.CharField(max_length=100)
@@ -44,8 +45,9 @@ class Categories(models.Model):
     def __unicode__(self):
         return self.category
 
+    @models.permalink
     def get_absolute_url(self):
-        return "/words/categories/%s/" % (self.slug)
+        return ('category_quotes', (), { 'categoryslug': self.slug })
 
 class Quote(models.Model):
     quote = models.TextField()
@@ -59,9 +61,10 @@ class Quote(models.Model):
     def __unicode__(self):
         return self.quote
 
+    @models.permalink
     def get_absolute_url(self):
-        return "/words/%s/" % (self.slug)
-
+        return ('quote_detail', (), { 'quoteslug': self.slug })
+    
 class Submission(models.Model):
     item = models.TextField()
     name = models.CharField(max_length=200)
