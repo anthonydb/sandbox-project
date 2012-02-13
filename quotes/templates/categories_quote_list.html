@@ -1,6 +1,6 @@
 {% extends "quotes_base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}| {% for category_name in categories %}{{ category_name.category }} {% endfor %}{% endblock %}
 
 {% block content %}
 

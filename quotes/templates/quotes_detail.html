@@ -1,6 +1,6 @@
 {% extends "quotes_base.html" %}
 
-{% block title %}{% endblock %}
+{% block title %}| {{ quote.author }} | {{ quote.quote|truncatewords:7 }}{% endblock %}
 
 
 {% block content %}

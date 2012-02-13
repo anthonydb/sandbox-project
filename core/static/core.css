@@ -1,7 +1,7 @@
 body
 {
    margin: 0;
-   font-family:"Helvetica Neue", Arial, Helvetica, Geneva, sans-serif;
+   font-family: 'Lusitana', Arial, Helvetica, Geneva, sans-serif;
    font-size: 12px;  
    text-align: left;
    vertical-align: top;
@@ -41,7 +41,7 @@ p
 
 #main
 {
-   font-family:Georgia;
+   font-family: 'Lusitana', Georgia;
    font-size: 24px;
    letter-spacing: -1px;
    text-align: left;
