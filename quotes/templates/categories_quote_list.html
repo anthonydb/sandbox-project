@@ -1,6 +1,7 @@
 {% extends "quotes_base.html" %}
 
 {% block title %}| {% for category_name in categories %}{{ category_name.category }} {% endfor %}{% endblock %}
+{% block description %}A collection of quotes about {% for category_name in categories %}{{ category_name.category }}{% endfor %} in Words on Art.{% endblock %}
 
 {% block content %}
 

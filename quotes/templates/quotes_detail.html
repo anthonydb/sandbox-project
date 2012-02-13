@@ -1,7 +1,7 @@
 {% extends "quotes_base.html" %}
 
 {% block title %}| {{ quote.author }} | {{ quote.quote|truncatewords:7 }}{% endblock %}
-
+{% block description %}A quote by {{ quote.author }} in Words on Art that starts with {{ quote.quote|truncatewords:7 }}{% endblock %}
 
 {% block content %}
     <div id="quote">    
