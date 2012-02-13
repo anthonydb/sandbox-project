@@ -55,6 +55,7 @@ class Quote(models.Model):
     author = models.ForeignKey(Author)
     categories = models.ManyToManyField(Categories)
     slug = models.SlugField(unique=True)
+    create_date = models.DateTimeField(auto_now=True)
     #objects = models.Manager()
     #random = QuoteManager()
 
