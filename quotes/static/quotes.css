@@ -64,7 +64,7 @@ input.button {
    line-height: 20px;
    float: right;
    color: #FFFFFF;
-   margin: 10px 10px; 0 0;
+   margin: 10px 10px 0 0;
    /*background-color: #000000;*/
 }
 .viewlist {
@@ -133,7 +133,7 @@ input.button {
 /* Item list style */
 
 #list {
-    font-family: 'Lusitana' Georgia, Arial;
+    font-family: 'Lusitana', Georgia, Arial;
     font-size: 16px;
     text-align: left;
     width: 900px;

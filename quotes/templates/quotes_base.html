@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}quotes.css" />
     <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/bootstrap-tooltip.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
          // Hide the view div
@@ -17,12 +18,18 @@
             return false;
             });
       });
+      $("body").tooltip({
+         selector: "a[rel=tooltip]",
+         placement: "top",
+         animation: "true",
+         delay: 1000
+      });
       </script>
     <title>Words on Art {% block title %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
 </head>
 <body>
-      <div class="slide" style="cursor: pointer;">&#187</div>
+      <div class="slide" style="cursor: pointer;">&#187;</div>
       <div class="view">
          <h2>Words on Art</h2>
          <div class="viewlist">
@@ -33,11 +40,9 @@
            <a href="{% url about %}">About</a><br/>
          </div>
       </div> 
-       
        <div id="container">
        <div id="header">
        </div>
-      
             {% block content %}
             {% endblock %}
         <div id="footer">
