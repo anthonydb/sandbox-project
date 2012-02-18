@@ -72,6 +72,7 @@ class Submission(models.Model):
     email = models.EmailField()
     date = models.DateTimeField(auto_now=True)
     source = models.TextField()
+    ip_address = models.CharField(max_length=30)
 
     class Meta:
         ordering = ['item']

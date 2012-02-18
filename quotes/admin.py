@@ -12,7 +12,7 @@ class QuoteAdmin(admin.ModelAdmin):
     list_display = ('quote', 'create_date')
 
 class SubmissionAdmin(admin.ModelAdmin):
-    list_display = ('item', 'source', 'name', 'email', 'date') 
+    list_display = ('item', 'source', 'name', 'email', 'date', 'ip_address') 
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Categories, CategoriesAdmin)
