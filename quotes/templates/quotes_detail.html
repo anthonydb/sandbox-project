@@ -12,14 +12,18 @@
                 <a href="{{ quote.author.get_absolute_url }}">{{ quote.author }}</a>
             </div>
             <div id="tag">
-            {% for category in quote.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
+                {% for category in quote.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
                 {% if forloop.last %}{% else %}
                 {% ifequal forloop.revcounter0 1 %}&amp; {% else %}, {% endifequal %}
                 {% endif %}
                 {% endfor %} | <a class="inline" href="#inline_content">&dagger;</a> | <a href="{{ quote.get_absolute_url }}">&#182</a>
             <br />
             </div>
-         <div id="markr">&#8217;</div> 
+         <div id="markr">&#8217;</div>
+         <div id="social">
+             <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
         {% else %}
             <p>Writing is a ton of fun.</p>
         {% endif %}
@@ -29,6 +33,5 @@
 			<p>{{ quote.source }}</p>
 			</div>
 		</div>
- 
     </div>
 {% endblock %}

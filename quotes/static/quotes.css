@@ -88,6 +88,7 @@ input.button {
 }
 #markr {
     float:right;
+    height: 20px;
     line-height: 120px;
     font-size:600%;
     color: #E0EEEE;
@@ -125,10 +126,18 @@ input.button {
    text-decoration: none;
    color: #989898;
 }
+
 #tag a:hover {
    text-decoration: underline;
    color: #989898;
 }
+
+#social {
+   text-align: right;
+   width: 100%;
+   clear: right;
+}
+
 
 /* Item list style */
 
