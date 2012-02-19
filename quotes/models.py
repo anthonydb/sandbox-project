@@ -73,9 +73,10 @@ class Submission(models.Model):
     date = models.DateTimeField(auto_now=True)
     source = models.TextField()
     ip_address = models.CharField(max_length=30)
+    misc_headers = models.CharField(max_length=500)
 
     class Meta:
-        ordering = ['item']
+        ordering = ['-date']
         verbose_name_plural = 'Submissions'
 
     def __unicode__(self):

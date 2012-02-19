@@ -16,14 +16,15 @@ class SuggestForm(ModelForm):
                            )
     class Meta:
         model = Submission
-        exclude = ['date', 'ip_address']
+        exclude = ['date', 'ip_address', 'misc_headers']
 
 def submit_quote(request):
     if request.method == 'POST':
         form = SuggestForm(request.POST)
         if form.is_valid():
             obj = form.save(commit=False)
-            obj.ip_address = request.META.get['REMOTE_ADDR', 'Unknown']
+            obj.ip_address = request.META.get('REMOTE_ADDR', 'Unknown')
+            obj.misc_headers = str(request.META.get('SERVER_NAME', 'Unknown')) + '|' + str(request.META.get('HTTP_USER_AGENT', 'Unknown'))
             obj.save()            
             #form.save()
             return HttpResponseRedirect('/words/suggest/thanks/')
