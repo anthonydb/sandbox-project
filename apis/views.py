@@ -3,10 +3,12 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response
 import requests
 import json
+from keys import *
 
 def BookListAPIView(request):
     top_list = []
-    r = requests.get('http://api.usatoday.com/open/bestsellers/books/booklists/2012/02/09/?api_key=8asfasz7segqyv5baqf66w88&encoding=json')
+    url = 'http://api.usatoday.com/open/bestsellers/books/booklists/2012/02/09/?api_key=' + BOOK_KEY + '&encoding=json'
+    r = requests.get(url)
     booklist = json.loads(r.text)
     for x in range(0,20):
         books_dict = {}

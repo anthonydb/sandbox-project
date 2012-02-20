@@ -4,3 +4,4 @@ local_settings.py
 __old__*
 *.txt
 jquery-*
+/apis/keys.py
