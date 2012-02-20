@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Booklist API test</title>
+    <meta name="description" content="Book List API test">
+</head>
+<body>
+      <div id="container">
+      <h2>USA TODAY Best-Selling Books list</h2>
+      <table>
+          <tr>
+          <th>Rank</th><th>Title</th><th>Author</th>
+          </tr>
+      {% for entry in top_list %}
+          <tr>
+          <td>{{ entry.rank}}</td> <td><b>{{ entry.title }}</b></td> <td>{{ entry.author }}</td>
+          </tr>
+      {% endfor %}
+
+      </table>
+      </div>
+</body>
+</html>
