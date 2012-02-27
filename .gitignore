@@ -5,3 +5,4 @@ __old__*
 *.txt
 jquery-*
 /apis/keys.py
+urls.py
