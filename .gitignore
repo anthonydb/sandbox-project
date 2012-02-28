@@ -1,6 +1,7 @@
 *.pyc
 *.db
 local_settings.py
+urls_base.py
 __old__*
 *.txt
 jquery-*
