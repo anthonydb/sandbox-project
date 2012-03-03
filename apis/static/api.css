@@ -1,8 +1,8 @@
 body
 {
    margin: 0;
-   font-family: 'Lusitana', Arial, Helvetica, Geneva, sans-serif;
-   font-size: 12px;  
+   font-family: 'Ubuntu Condensed', sans-serif;
+   font-size: 22px;  
    text-align: left;
    vertical-align: top;
    background: #FFFFFF;
@@ -41,23 +41,31 @@ p
 
 #main
 {
-   font-family: 'Lusitana', Georgia;
-   font-size: 18px;
+   font-family: 'Ubuntu Condensed', sans-serif;
+   font-size: 20px;
    letter-spacing: -1px;
    text-align: left;
    width: 900px;
 }
 
-#main ul
+#chatter
 {
-	list-style-type: none;
-	margin-left: 0;
-/*    padding-left: 1em;
-	text-indent: -1em; */
+   font-size: 18px;
+   margin: -20px 0 10px 0;
+}
+#main table
+{
+   width: 100%;
 }
 
-#main ul li
+#main th
 {
-	padding: 4px 0 33px 0;
-	line-height: 30px;
+   text-decoration: underline;
 }
+
+#tag
+{
+   font-size: 14px;
+   padding: 8px 0 0 0;
+}
+

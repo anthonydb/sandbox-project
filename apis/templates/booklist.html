@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}api.css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
     <title>Booklist API test</title>
     <meta name="description" content="Book List API test">
 </head>
 <body>
       <div id="container">
-      <h2>USA TODAY Best-Selling Books list</h2>
+      <div id="main">
+      
+      <h1>USA TODAY Best-Selling Books list</h1>
+      <div id="chatter">
+      Here is a recent USA TODAY Book List, fetched from the <a href="http://developer.usatoday.com/docs/read/bestselling_books" target="_blank">Best-Selling Books API</a>. 
+      </div>
       <table>
           <tr>
           <th>Rank</th><th>Title</th><th>Author</th>
@@ -17,8 +24,13 @@
           <td>{{ entry.rank}}</td> <td><b>{{ entry.title }}</b></td> <td>{{ entry.author }}</td>
           </tr>
       {% endfor %}
-
+      
       </table>
+         <div id="tag">
+            For information on USA TODAY APIs, visit the <a href="http://developer.usatoday.com" target="_blank">Developer's Network</a>.<br/>
+         </div>
+
+      </div>
       </div>
 </body>
 </html>
