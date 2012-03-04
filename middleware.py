@@ -6,3 +6,7 @@ class WebFactionFixes(object):
         if 'HTTP_X_FORWARDED_FOR' in request.META:
             ip = request.META['HTTP_X_FORWARDED_FOR'].split(",")[0].strip()
             request.META['REMOTE_ADDR'] = ip
+
+        if 'HTTP_HOST' in request.META:
+            host = request.META['HTTP_HOST'].split(",")[0].strip()
+            request.META['REMOTE_HOST'] = host
