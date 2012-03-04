@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}api.css" />
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+     <title>anthonydb.com {% block title %}{% endblock %}</title>
+     <meta name="description" content="The web development sandbox of Anthony DeBarros.">
+</head>
+<body>
+    <div id="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    
+</body>
+</html>

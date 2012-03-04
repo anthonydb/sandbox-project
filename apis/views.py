@@ -5,6 +5,9 @@ import requests
 import json
 from keys import *
 
+class APIHomeView(TemplateView):
+    template_name = 'apihome.html'
+
 def BookListAPIView(request):
     top_list = []
     url = 'http://api.usatoday.com/open/bestsellers/books/booklists/2012/02/09/?api_key=' + BOOK_KEY + '&encoding=json'
