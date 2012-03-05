@@ -50,7 +50,7 @@ def search_quotes(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             term = form.cleaned_data['quote']
-            results = Quote.objects.filter(quote__contains=term).order_by('quote')
+            results = Quote.objects.filter(quote__icontains=term).order_by('quote')
             if not results:
                 results = ['None']
             return render_to_response('search.html',
