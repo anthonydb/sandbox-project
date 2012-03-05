@@ -1,7 +1,7 @@
 body
 {
    margin: 0;
-   font-family: 'Ubuntu Condensed', sans-serif;
+   font-family: 'Gentium Book Basic', serif;
    font-size: 22px;  
    text-align: left;
    vertical-align: top;
@@ -41,7 +41,7 @@ p
 
 #main
 {
-   font-family: 'Ubuntu Condensed', sans-serif;
+   font-family: 'Gentium Book Basic', serif;
    font-size: 20px;
    letter-spacing: -1px;
    text-align: left;

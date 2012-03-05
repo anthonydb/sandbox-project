@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}api.css" />
-    <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic' rel='stylesheet' type='text/css'>
     <title>Booklist API test</title>
     <meta name="description" content="Book List API test">
 </head>
@@ -11,9 +11,9 @@
       <div id="container">
       <div id="main">
       
-      <h1>USA TODAY Best-Selling Books list</h1>
+      <h2>USA TODAY Best-Selling Books list</h2>
       <div id="chatter">
-      Here is a recent USA TODAY Book List, fetched from the <a href="http://developer.usatoday.com/docs/read/bestselling_books" target="_blank">Best-Selling Books API</a>. 
+      The top 20 books for {{ date_dict.month }}/{{ date_dict.day }}/{{ date_dict.year }}, fetched from the <a href="http://developer.usatoday.com/docs/read/bestselling_books" target="_blank">Best-Selling Books API</a>. This page automatically updates with a newer list each Thursday. The Django views.py that calls and parses the API is available on <a href="https://github.com/AnthonyDB/sandbox/blob/master/apis/views.py" target="_blank">Github</a>. 
       </div>
       <table>
           <tr>
