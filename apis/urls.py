@@ -7,5 +7,5 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^books/', BookListAPIView, name='books'),
-    url(r'^$', APIHomeView.as_view()),
+    url(r'^$', APIHomeView.as_view(), name='apihome'),
 )
