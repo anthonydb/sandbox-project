@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.core.mail import mail_admins
 import requests
 import json
 from keys import *
@@ -21,16 +22,23 @@ def BookListAPIView(request):
     base_url = 'http://api.usatoday.com/open/bestsellers/books/booklists/' 
     url = base_url + date_dict['year'] + '/' + date_dict['month'] + '/' + date_dict['day'] + '/?api_key=' + BOOK_KEY + '&encoding=json'
     r = requests.get(url)
-    booklist = json.loads(r.text)
 
-    #parse the JSON returned by the API
     top_list = []
-    for x in range(0,20):
+    try:
+        # If JSON was returned, parse it
+        booklist = json.loads(r.text)
+        for x in range(0,20):
+            books_dict = {}
+            books_dict['rank'] = booklist['BookLists'][0]['BookListEntries'][x]['Rank']
+            books_dict['title'] = booklist['BookLists'][0]['BookListEntries'][x]['Title']
+            books_dict['author'] = booklist['BookLists'][0]['BookListEntries'][x]['Author']
+            top_list.append(books_dict)
+    except ValueError:
+        # Pass along a message that the API did not respond
         books_dict = {}
-        books_dict['rank'] = booklist['BookLists'][0]['BookListEntries'][x]['Rank']
-        books_dict['title'] = booklist['BookLists'][0]['BookListEntries'][x]['Title']
-        books_dict['author'] = booklist['BookLists'][0]['BookListEntries'][x]['Author']
+        books_dict['rank'] = 'The API is not responding'
         top_list.append(books_dict)
+        mail_admins('Books API','Looks like the Books API failed.')
 
     return render_to_response('booklist.html', 
                             {'top_list': top_list, 'date_dict': date_dict}, 
