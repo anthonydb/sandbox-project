@@ -12,10 +12,10 @@ class APIHomeView(TemplateView):
     template_name = 'apihome.html'
 
 def BookListAPIView(request):
-    # Find a Thursday two weeks prior to today; the Book List API does not offer the latest list.
+    # Find a Thursday one week prior to today; the public Book List API offers the list on a one-week delay.
     today = date.today()
     offset = (today.weekday() - 3) % 7
-    thursday = today - timedelta(days=(offset+14))
+    thursday = today - timedelta(days=(offset+7))
     date_dict = {'year': str(thursday.year), 'month': str(thursday.month), 'day': str(thursday.day)}
     
     # prep and load URL
