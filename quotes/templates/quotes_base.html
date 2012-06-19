@@ -21,6 +21,12 @@
          $(".inline").colorbox({inline:true, width:"500px"});
       });
       </script>
+      <script type="text/javascript">
+         function showBtn() {
+         document.getElementById("reloadr").style.visibility = "visible";
+         }
+         setTimeout("showBtn()", 4000); // 1000 = 1 sec
+         </script>
     <title>Words on Art {% block title %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
 </head>
