@@ -1,4 +1,4 @@
-from anthonydb.quotes.models import Author, Categories, Quote, Submission
+from quotes.models import Author, Categories, Quote, Submission
 from django.contrib import admin
 
 class AuthorAdmin(admin.ModelAdmin):
