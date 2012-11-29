@@ -1,5 +1,5 @@
-from django.conf.urls.defaults import patterns, include, url
-from quotes.views import QuotesListView, QuotesHomeView, QuotesDetailView, AuthorListView, AuthorQuotesView, CategoriesListView, CategoriesQuotesView, submit_thanks, AboutPageView
+from django.conf.urls.defaults import patterns, url
+from quotes.views import QuotesHomeView, QuotesDetailView, AuthorListView, AuthorQuotesView, CategoriesListView, CategoriesQuotesView, submit_thanks, AboutPageView
 from quotes.forms import submit_quote, search_quotes
 
 # Uncomment the next two lines to enable the admin:
@@ -8,7 +8,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^authors/(?P<authorslug>[-\w]+)/', AuthorQuotesView, name='author_quotes'),
-    url(r'^authors/', AuthorListView.as_view(), name='authors'),    
+    url(r'^authors/', AuthorListView.as_view(), name='authors'),
     url(r'^categories/(?P<categoryslug>[-\w]+)/', CategoriesQuotesView, name='category_quotes'),
     url(r'^categories/', CategoriesListView.as_view(), name='categories'),
     url(r'^search/', search_quotes, name='search'),

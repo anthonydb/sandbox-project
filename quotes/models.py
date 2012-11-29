@@ -9,13 +9,14 @@ from django.db import models
 #    def pull_random_quote(self):
 #        count = self.all().aggregate(count=Count('id'))['count']
 #        random_index = randint(0, count -1)
-#        return self.all()[random_index]            
+#        return self.all()[random_index]
 #
 #    def random_naive(self):
 #        return self.all().order_by('?')[0]
 #
 #    def test(self):
 #        return self.all()[3]
+
 
 class Author(models.Model):
     firstname = models.CharField(max_length=100)
@@ -32,7 +33,8 @@ class Author(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('author_quotes', (), { 'authorslug': self.slug })
+        return ('author_quotes', (), {'authorslug': self.slug})
+
 
 class Categories(models.Model):
     category = models.CharField(max_length=100)
@@ -47,7 +49,8 @@ class Categories(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('category_quotes', (), { 'categoryslug': self.slug })
+        return ('category_quotes', (), {'categoryslug': self.slug})
+
 
 class Quote(models.Model):
     quote = models.TextField()
@@ -64,8 +67,9 @@ class Quote(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        return ('quote_detail', (), { 'quoteslug': self.slug })
-    
+        return ('quote_detail', (), {'quoteslug': self.slug})
+
+
 class Submission(models.Model):
     item = models.TextField()
     name = models.CharField(max_length=200)
