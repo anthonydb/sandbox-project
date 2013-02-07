@@ -1,5 +1,6 @@
 *.pyc
 *.db
+/anthonydb/all_static/
 /anthonydb/local_settings.py
 /anthonydb/urls_base.py
 __old__*
