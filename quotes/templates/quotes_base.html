@@ -12,12 +12,17 @@
          // Hide the view div
          $('div.view').hide();
          // toggle
-         $('div.slide').toggle(function() {
-            $(this).siblings('div.view').fadeIn('slow');
-            }, function() {
-            $(this).siblings('div.view').fadeOut('fast');
-            return false;
-            });
+         $('div.slide').click(function() {
+           $('div.view').fadeToggle('fast', function() {
+            // Done
+           });
+         });         
+         //$('div.slide').toggle(function() {
+         //   $(this).siblings('div.view').fadeIn('slow');
+         //   }, function() {
+         //   $(this).siblings('div.view').fadeOut('fast');
+         //   return false;
+         //   });
          $(".inline").colorbox({inline:true, width:"500px"});
       });
       </script>
@@ -26,7 +31,7 @@
          document.getElementById("reloadr").style.visibility = "visible";
          }
          setTimeout("showBtn()", 4000); // 1000 = 1 sec
-         </script>
+      </script>
     <title>Words on Art {% block title %}{% endblock %}</title>
     <meta name="description" content="{% block description %}{% endblock %}">
 </head>
@@ -52,5 +57,5 @@
         </div>
         </div>
     </div>
-</body>
+  </body>
 </html>
