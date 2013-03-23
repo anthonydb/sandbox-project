@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}colorbox.css" />
     <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.colorbox-min.js"></script>
     <script type="text/javascript">
       $(document).ready(function() {
          // Hide the view div
@@ -17,7 +16,7 @@
             // Done
            });
          });         
-         $(".inline").colorbox({inline:true, width:"500px"});
+         $(".inline").colorbox({inline:true, width:"500px", opacity: "0.5"});
       });
       </script>
       <script type="text/javascript">
