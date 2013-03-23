@@ -16,7 +16,7 @@
                 {% if forloop.last %}{% else %}
                 {% ifequal forloop.revcounter0 1 %}&amp; {% else %}, {% endifequal %}
                 {% endif %}
-                {% endfor %} | <a class="inline" href="#inline_content">&dagger;</a> | <a href="{{ random_quote.get_absolute_url }}">&#182</a>
+                {% endfor %} | <a class="inline" href="#" data-reveal-id="quoteModal" data-animation="fade" data-animationspeed="300" data-closeonbackgroundclick="true" >&dagger;</a> | <a href="{{ random_quote.get_absolute_url }}">&#182</a>
             <br />
             </div>
          <div id="markr">&#8217;</div>
@@ -27,12 +27,11 @@
         {% else %}
             <p>Writing is a ton of fun.</p>
         {% endif %}
-        <div style='display:none'>
-			<div id='inline_content' style='padding:10px; background:#fff;'>
+            <div id='quoteModal' class="reveal-modal">
 			<p><strong>Source for this quote:</strong></p>
 			<p>{{ random_quote.source }}</p>
+            <a class="close-reveal-modal">&#215;</a>
 			</div>
-		</div>
         <div id="reloadr" style="visibility: hidden">
             <input class="button" type="submit" onclick="window.location.reload();" value="Fetch Another">
         </div>
