@@ -138,6 +138,10 @@ input.button {
    clear: right;
 }
 
+#quoteModal {
+   font-size: 16px;
+   letter-spacing: 0px;
+}
 
 /* Item list style */
 
@@ -181,7 +185,7 @@ input.button {
    text-decoration: underline;
    color: #989898;
 }
-
+#
 
 /* Miscellany */
 
