@@ -35,7 +35,7 @@ p
 #container
 {
 	margin: 10px auto 0 auto;
-    width: 1000px;  
+   width: 1000px;  
 	background: #FFFFFF;
 }
 
@@ -61,6 +61,14 @@ p
 #main th
 {
    text-decoration: underline;
+}
+
+#main td.column_1 {
+width: 50px;
+}
+
+#main td.column_2 {
+width: 350px;
 }
 
 #tag
