@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import patterns, url
+from django.conf.urls import patterns, url
 from quotes.views import QuotesHomeView, QuotesDetailView, AuthorListView, AuthorQuotesView, CategoriesListView, CategoriesQuotesView, submit_thanks, AboutPageView
 from quotes.forms import submit_quote, search_quotes
 
