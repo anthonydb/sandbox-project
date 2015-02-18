@@ -13,6 +13,7 @@ quote_dict = {
     'date_field': 'create_date'
 }
 
+
 class ViewSitemap(Sitemap):
     """Reverse static views for XML sitemap."""
     def items(self):
@@ -29,5 +30,3 @@ sitemaps = {
     'quotes': GenericSitemap(quote_dict, priority=0.8),
     'views': ViewSitemap
 }
-
-
