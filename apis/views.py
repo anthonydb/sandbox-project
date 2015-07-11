@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.core.mail import mail_admins
 import requests
 import json
-from keys import *
+# from keys import *
 from datetime import date
 from datetime import timedelta
 
@@ -21,8 +21,8 @@ def BookListAPIView(request):
     date_dict = {'year': str(thursday.year), 'month': str(thursday.month), 'day': str(thursday.day)}
 
     # prep and load URL
-    base_url = 'http://api.usatoday.com/open/bestsellers/books/booklists/'
-    url = base_url + date_dict['year'] + '/' + date_dict['month'] + '/' + date_dict['day'] + '/?api_key=' + BOOK_KEY + '&encoding=json'
+    base_url = 'http://usatoday30.usatoday.com/api/books/'
+    url = base_url + date_dict['year'] + '/' + date_dict['month'] + '/' + date_dict['day']
     r = requests.get(url)
 
     top_list = []
