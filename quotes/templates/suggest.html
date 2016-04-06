@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}quotes.css" />
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'quotes.css' %}" />
     <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
     <script type="text/javascript">
       $(document).ready(function() {
          // Hide the view div
@@ -14,7 +15,7 @@
            $('div.view').fadeToggle('fast', function() {
             // Done
            });
-         });         
+         });
       });
       </script>
       <!-- Replace the Google account with your own code -->
@@ -33,7 +34,7 @@
      <meta name="description" content="Suggest a quote about music, writing, journalism or the other artistic endeavor to add to Words on Art.">
 </head>
 <body>
-     <script type="text/javascript" src="{{ STATIC_URL }}js/utils.js"></script>
+     <script type="text/javascript" src="{% static 'js/utils.js' %}"></script>
       <div class="slide" style="cursor: pointer;">+</div>
       <div class="view">
          <h2>Words on Art</h2>
@@ -44,14 +45,14 @@
            <a href="{% url 'suggest' %}">Suggest</a></br>
            <a href="{% url 'about' %}">About</a><br/>
          </div>
-      </div> 
+      </div>
 
       <div id="container">
        <div id="header">
        </div>
-    
+
        <h2>Suggest Some Words ...</h2>
-       Tell us a great quote about music, writing or the arts. If we like it, we'll add it here.<br/> 
+       Tell us a great quote about music, writing or the arts. If we like it, we'll add it here.<br/>
            <br/>
            <form method="post" action="" name="suggestForm">{% csrf_token %}
            The quote and its author:<br/>
@@ -72,9 +73,9 @@
         </div>
     </div>
 </body>
-</html>    
-    
-    
-    
-    
+</html>
+
+
+
+
 
