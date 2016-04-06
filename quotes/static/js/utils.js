@@ -3,7 +3,7 @@ function validtest() {
    var sourceboxValue = document.forms["suggestForm"]["id_source"].value.toLowerCase();
    var nameboxValue = document.forms["suggestForm"]["id_name"].value.toLowerCase();
    var mailboxValue = document.forms["suggestForm"]["id_email"].value.toLowerCase();
-   var validboxValue = document.forms["suggestForm"]["validateBox"].value.toLowerCase();    
+   var validboxValue = document.forms["suggestForm"]["validateBox"].value.toLowerCase();
 
    if (quoteboxValue == "")
       {
