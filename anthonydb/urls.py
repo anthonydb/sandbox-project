@@ -1,1 +1,1 @@
-from urls_base import *
+from .urls_base import *

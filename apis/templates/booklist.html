@@ -1,8 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}api.css" />
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'api.css'%}" />
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <title>Booklist API test</title>
     <meta name="description" content="Book List API test">
@@ -25,10 +27,10 @@
 <body>
       <div id="container">
       <div id="main">
-      
+
       <h2>USA TODAY Best-Selling Books list</h2>
       <div id="chatter">
-      The top 20 books for {{ date_dict.month }}/{{ date_dict.day }}/{{ date_dict.year }}, fetched from the <a href="http://developer.usatoday.com/docs/read/bestselling_books" target="_blank">Best-Selling Books API</a>. This page automatically updates with a newer list each Thursday. The Django views.py that calls and parses the API is available on <a href="https://github.com/AnthonyDB/sandbox/blob/master/apis/views.py" target="_blank">Github</a>. 
+      The top 20 books for {{ date_dict.month }}/{{ date_dict.day }}/{{ date_dict.year }}, fetched from the <a href="http://developer.usatoday.com/docs/read/bestselling_books" target="_blank">Best-Selling Books API</a>. This page automatically updates with a newer list each Thursday. The Django views.py that calls and parses the API is available on <a href="https://github.com/AnthonyDB/sandbox/blob/master/apis/views.py" target="_blank">Github</a>.
       </div>
       <table>
           <tr>
@@ -39,7 +41,7 @@
           <td class="column_1">{{ entry.rank}}</td> <td class="column_2"<b>{{ entry.title }}</b></td> <td>{{ entry.author }}</td>
           </tr>
       {% endfor %}
-      
+
       </table>
          <div id="tag">
             For information on USA TODAY APIs, visit the <a href="http://developer.usatoday.com" target="_blank">Developer's Network</a>.<br/>

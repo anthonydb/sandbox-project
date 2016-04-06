@@ -1,3 +1,4 @@
+.DS_Store
 *.pyc
 *.db
 /anthonydb/all_static/

@@ -1,8 +1,8 @@
-from django.conf.urls import *
-#from core.views import home
+from django.conf.urls import url
 from core.views import HomePageView
+from django.conf import settings  # remove for production
+from django.conf.urls.static import static  # remove for production
 
-urlpatterns = patterns('',
-#    url(r'^$', home, name='home'),
-    (r'^$', HomePageView.as_view()),
-)
+urlpatterns = [
+    url(r'^$', HomePageView.as_view()),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

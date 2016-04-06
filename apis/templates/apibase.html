@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}api.css" />
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'api.css' %}" />
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
      <title>anthonydb.com {% block title %}{% endblock %}</title>
      <meta name="description" content="The web development sandbox of Anthony DeBarros.">
@@ -28,6 +29,6 @@
         {% block content %}
         {% endblock %}
     </div>
-    
+
 </body>
 </html>

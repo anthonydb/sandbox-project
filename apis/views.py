@@ -14,7 +14,8 @@ class APIHomeView(TemplateView):
 
 
 def BookListAPIView(request):
-    # Find a Thursday one week prior to today; the public Book List API offers the list on a one-week delay.
+    # Find a Thursday one week prior to today; the public
+    # Book List API offers the list on a one-week delay.
     today = date.today()
     offset = (today.weekday() - 3) % 7
     thursday = today - timedelta(days=(offset + 7))
