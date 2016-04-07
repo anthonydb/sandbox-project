@@ -1,21 +1,21 @@
-#from random import randint
+# from random import randint
 from django.db import models
-#from django.db.models import Count, Max
+# from django.db.models import Count, Max
 
-#this is a test of using a model manager
-#to pull a random quote
 
-#class QuoteManager(models.Manager):
-#    def pull_random_quote(self):
-#        count = self.all().aggregate(count=Count('id'))['count']
-#        random_index = randint(0, count -1)
-#        return self.all()[random_index]
-#
-#    def random_naive(self):
-#        return self.all().order_by('?')[0]
-#
-#    def test(self):
-#        return self.all()[3]
+# This test of using a model manager to pull a random quote
+# is currently unused
+class QuoteManager(models.Manager):
+    def pull_random_quote(self):
+        count = self.all().aggregate(count=Count('id'))['count']
+        random_index = randint(0, count -1)
+        return self.all()[random_index]
+
+    def random_naive(self):
+        return self.all().order_by('?')[0]
+
+    def test(self):
+        return self.all()[3]
 
 
 class Author(models.Model):
@@ -28,7 +28,7 @@ class Author(models.Model):
     class Meta:
         ordering = ['lastname']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.displayname
 
     @models.permalink
@@ -44,7 +44,7 @@ class Categories(models.Model):
         ordering = ['category']
         verbose_name_plural = 'Categories'
 
-    def __unicode__(self):
+    def __str__(self):
         return self.category
 
     @models.permalink
@@ -59,10 +59,10 @@ class Quote(models.Model):
     categories = models.ManyToManyField(Categories)
     slug = models.SlugField(unique=True)
     create_date = models.DateTimeField(auto_now=True)
-    #objects = models.Manager()
-    #random = QuoteManager()
+    # objects = models.Manager()
+    # random = QuoteManager()
 
-    def __unicode__(self):
+    def __str__(self):
         return self.quote
 
     @models.permalink
@@ -83,5 +83,5 @@ class Submission(models.Model):
         ordering = ['-date']
         verbose_name_plural = 'Submissions'
 
-    def __unicode__(self):
+    def __str__(self):
         return self.item
