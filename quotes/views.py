@@ -13,7 +13,7 @@ from django.db.models import Count
 #    context_object_name = 'random_quote'
 
 
-#Home page featuring a random quote
+# Home page featuring a random quote
 def QuotesHomeView(request):
     count = Quote.objects.all().aggregate(count=Count('id'))['count']
     random_index = randint(0, count - 1)
@@ -34,8 +34,8 @@ class QuotesListView(ListView):
 def QuotesDetailView(request, quoteslug):
     quote = get_object_or_404(Quote, slug=quoteslug)
     return render_to_response('quotes_detail.html',
-                            {'quote': quote},
-                            context_instance=RequestContext(request))
+                              {'quote': quote},
+                              context_instance=RequestContext(request))
 
 
 # Author list
@@ -51,11 +51,11 @@ def AuthorQuotesView(request, authorslug):
     author_quote_list = Quote.objects.filter(author=author)
 
     return render_to_response('author_quote_list.html',
-                            {'author_quote_list': author_quote_list},
-                            context_instance=RequestContext(request))
+                              {'author_quote_list': author_quote_list},
+                              context_instance=RequestContext(request))
 
 
-#Categories views
+# Categories views
 class CategoriesListView(ListView):
     template_name = 'categories_list.html'
     queryset = Categories.objects.order_by('category')
@@ -67,9 +67,9 @@ def CategoriesQuotesView(request, categoryslug):
     categories_quote_list = Quote.objects.filter(categories=category).order_by('author')
     category_name = Categories.objects.filter(slug=categoryslug)
     return render_to_response('categories_quote_list.html',
-                            {'categories_quote_list': categories_quote_list,
-                              'categories': category_name},
-                            context_instance=RequestContext(request))
+                              {'categories_quote_list': categories_quote_list,
+                               'categories': category_name},
+                              context_instance=RequestContext(request))
 
 
 # Submit thanks

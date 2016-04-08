@@ -3,7 +3,7 @@ body
    margin: 0;
    /*font-family: 'Lusitana', Arial, Helvetica, Geneva, sans-serif;*/
    font-family: 'Source Sans Pro', Arial, Helvetica, Geneva, sans-serif;
-   font-size: 12px;  
+   font-size: 12px;
    text-align: left;
    vertical-align: top;
    background: #FFFFFF;
@@ -44,7 +44,7 @@ p
 #container
 {
 	margin: 10px auto 0 auto;
-    width: 1000px;  
+    width: 100%;
 	background: #FFFFFF;
 }
 
@@ -55,21 +55,23 @@ p
    font-size: 18px;
    letter-spacing: -1px;
    text-align: left;
-   width: 900px;
+   width: 100%;
+   padding: 20px;
 }
 
 #main ul
 {
-	list-style-type: none;
-	margin-left: 0;
-/*    padding-left: 1em;
-	text-indent: -1em; */
+    list-style-type: square;
+    margin-left: 10px;
+    padding-left: 1em;
+    text-indent: 1px;
+    width: 95%;
 }
 
 #main ul li
 {
-	padding: 4px 0 33px 0;
-	line-height: 30px;
+    width: 90%;
+
 }
 
 #contents
