@@ -4,7 +4,7 @@
 {% block description %}Words on Art: A collection of quotes about writing, music, art, poetry, journalism and the arts.{% endblock %}
 
 {% block content %}
-    <div id="quote">    
+    <div id="quote">
         {% if random_quote %}
          <div id="markl">&#8216;</div><br />
          {{ random_quote.quote }}<br />
@@ -27,11 +27,12 @@
         {% else %}
             <p>Writing is a ton of fun.</p>
         {% endif %}
-            <div id='quoteModal' class="reveal-modal">
-			<p><strong>Source for this quote:</strong></p>
-			<p>{{ random_quote.source }}</p>
-            <a class="close-reveal-modal">&#215;</a>
-			</div>
+        <script type="text/javascript">
+          function showBtn() {
+          document.getElementById("reloadr").style.visibility = "visible";
+          }
+          setTimeout("showBtn()", 4000); // 1000 = 1 sec
+        </script>
         <div id="reloadr" style="visibility: hidden">
             <input class="button" type="submit" onclick="window.location.reload();" value="Fetch Another">
         </div>
