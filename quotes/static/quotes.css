@@ -1,39 +1,46 @@
 body {
-   margin: 0;
-   font-family: 'Lusitana', Georgia, Arial, sans-serif;
-   font-size: 16px;
-   text-align: left;
-   vertical-align: top;
-   background: #FFFFFF;
+    margin: 0;
+    font-family: 'Lusitana', Georgia, Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+    vertical-align: top;
+    background: #FFFFFF;
 }
 
 h1 {
-   font-size: 32px;
-   letter-spacing: -2px;
-   padding: 0 0 0 0;
-   margin: 0 0 0 0;
+    font-size: 32px;
+    letter-spacing: -2px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 
 h2 {
-   font-family: 'Lusitana', Arial;
-   font-size: 24px;
-   font-weight: 700;
-   letter-spacing: -1px;
-   color: #000000;
-   margin: 0 0 2px 0;
+    font-family: 'Lusitana', Arial;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: #000000;
+    margin: 0 0 2px 0;
 }
 
-a:link, a:visited {
-	text-decoration: underline;
-	color: #000000;
+/* Links */
+a {
+    color: #007998;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+    text-decoration: none;
 }
-
-a:hover {
-	text-decoration: underline;
+a:hover,
+a:focus,
+a:active {
+    color: rgba(0, 121, 152, 0.5);
 }
 
 p {
-	padding: 10px 0 0 0;
+    padding: 10px 0 0 0;
 }
 
 input.button {
@@ -43,36 +50,37 @@ input.button {
 }
 
 #container {
-	margin: 10px auto 0 auto;
-    width: 1000px;
+    margin: 10px auto 0 auto;
+    width: 100%;
     height: 100%;
-	background: #FFFFFF;
+    background: #FFFFFF;
 }
 
 /* Menu div classes */
 .slide {
-   font-family: 'Lusitana', Arial;
-   font-size: 90px;
-   float: right;
-   padding: 0 20px 20px 20px;
-   margin: 0 20px 0 10px;
-   color: #FFFFFF;
-   background-color: #E0EEEE;
+    font-family: 'Lusitana', Arial;
+    font-size: 90px;
+    float: right;
+    padding: 0 20px 20px 20px;
+    margin: 0 20px 0 10px;
+    color: #FFFFFF;
+    background-color: #E0EEEE;
 }
+
 .view {
-   font-family: 'Lusitana', Arial;
-   line-height: 20px;
-   float: right;
-   color: #FFFFFF;
-   margin: 10px 10px 0 0;
-   /*background-color: #000000;*/
+    font-family: 'Lusitana', Arial;
+    line-height: 20px;
+    float: right;
+    color: #FFFFFF;
+    margin: 10px 10px 0 0;
 }
+
 .viewlist {
-   padding: 6px 0 0 6px;
+    padding: 6px 0 0 6px;
 }
 
 #header {
-    width: 980px;
+    width: 100%;
     height: 50px;
     font-weight: bold;
     text-align: right;
@@ -86,56 +94,54 @@ input.button {
     margin: 0 6px 700px 0;
     color: #E0EEEE;
 }
-#markr {
-    float:right;
-    height: 20px;
-    line-height: 120px;
-    font-size:600%;
-    color: #E0EEEE;
-}
 
 #quote {
-   font-family: 'Lusitana', Georgia;
-   font-size: 48px;
-   font-weight: 400;
-   letter-spacing: -1px;
-   text-align: left;
-   width: 900px;
-   padding: 90px 0 180px 0;
+    font-family: 'Lusitana', Georgia;
+    font-size: 48px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-align: left;
+    width: 100%;
+    margin: 0 20px 0 0;
+    padding: 90px 0 180px 0;
 }
 
 #attribute {
-   font-family: 'Lusitana', Georgia;
-   font-size: 28px;
-   font-weight: 400;
-   letter-spacing: -1px;
-   text-align: right;
-   padding: 8px 50px 0 0;
+    font-family: 'Lusitana', Georgia;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    text-align: left;
+    padding: 8px 50px 0 0;
+}
+
+#source {
+    font-family: Arial;
+    font-size: 14px;
+    letter-spacing: -1px;
+    text-align: left;
+    margin: 12px 0 0 0;
+    color: #989898;
 }
 
 #tag {
-   font-family: Arial;
-   font-size: 14px;
-   letter-spacing: -1px;
-   text-align: right;
-   padding: 6px 50px 0 0;
-   color: #989898;
-}
-
-#tag a {
-   text-decoration: none;
-   color: #989898;
-}
-
-#tag a:hover {
-   text-decoration: underline;
-   color: #989898;
+    font-family: Arial;
+    font-size: 14px;
+    letter-spacing: -1px;
+    text-align: left;
+    padding: 6px 50px 0 0;
+    color: #989898;
 }
 
 #social {
-   text-align: right;
-   width: 100%;
-   clear: right;
+    text-align: left;
+    width: 100%;
+    clear: right;
+    margin: 12px 0 12px 0;
+}
+
+#reloader {
+    padding 0;
 }
 
 /* Item list style */
@@ -144,55 +150,41 @@ input.button {
     font-family: 'Lusitana', Georgia, Arial;
     font-size: 16px;
     text-align: left;
-    width: 900px;
+    width: 100%;
     padding: 90px 0 180px 0;
 
 }
 
 #list ul {
-	list-style-type: none;
-	margin-left: 0;
+    list-style-type: none;
+    margin-left: 0;
     padding-left: 1em;
-	text-indent: -1em;
+    text-indent: -1em;
 }
 
 #list ul li {
-	padding: 4px 0 3px 0;
-	line-height: 18px;
+    padding: 4px 0 3px 0;
+    line-height: 18px;
 }
 
 #sectiondescriptor {
-   font-family: 'Lusitana', Georgia, Arial;
-   font-size: 22px;
-   letter-spacing: -1px;
-   text-align: left;
+    font-family: 'Lusitana', Georgia, Arial;
+    font-size: 22px;
+    letter-spacing: -1px;
+    text-align: left;
 }
-
-#tagelements {
-   color: #989898;
-}
-
-#tagelements a {
-   text-decoration: none;
-   color: #989898;
-}
-#tagelements a:hover {
-   text-decoration: underline;
-   color: #989898;
-}
-#
 
 /* Miscellany */
 
 #footer {
-    width: 980px;
+    width: 100%;
     height: 180px;
 }
 
 #message {
     font-family: Arial;
     color: #F80000;
-    width: 400px;
+    width: 100%;
     height: 14px;
     margin: 6px 0 6px 0;
 }
