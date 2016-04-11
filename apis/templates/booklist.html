@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="{% static 'api.css'%}" />
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <title>Booklist API test</title>
-    <meta name="description" content="Book List API test">
+    <meta name="description" content="Book List API">
 
     <!-- Replace the Google code with your own account -->
 <script type="text/javascript">
@@ -30,22 +30,20 @@
 
       <h2>USA TODAY Best-Selling Books list</h2>
       <div id="chatter">
-      The top 20 books for {{ date_dict.month }}/{{ date_dict.day }}/{{ date_dict.year }}, fetched from the <a href="http://developer.usatoday.com/docs/read/bestselling_books" target="_blank">Best-Selling Books API</a>. This page automatically updates with a newer list each Thursday. The Django views.py that calls and parses the API is available on <a href="https://github.com/AnthonyDB/sandbox/blob/master/apis/views.py" target="_blank">Github</a>.
+      The top 20 books for {{ date_dict.month }}/{{ date_dict.day }}/{{ date_dict.year }}, fetched from the <a href="http://usatoday30.usatoday.com/api/books/" target="_blank">Best-Selling Books API</a>. This page automatically updates with a newer list each Thursday. The Django views.py that calls and parses the API is available on <a href="https://github.com/anthonydb/sandbox-project/blob/master/apis/views.py" target="_blank">Github</a>.
       </div>
-      <table>
-          <tr>
-          <th>Rank</th><th>Title</th><th>Author</th>
-          </tr>
-      {% for entry in top_list %}
-          <tr>
-          <td class="column_1">{{ entry.rank}}</td> <td class="column_2"<b>{{ entry.title }}</b></td> <td>{{ entry.author }}</td>
-          </tr>
-      {% endfor %}
 
-      </table>
-         <div id="tag">
-            For information on USA TODAY APIs, visit the <a href="http://developer.usatoday.com" target="_blank">Developer's Network</a>.<br/>
-         </div>
+      <div id="list">
+        <ul>
+        {% for entry in top_list %}
+            <li>{{ entry.rank}}. <b>{{ entry.title }}</b>, {{ entry.author }} {{entry.class}}</li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      <div id="tag">
+         For information on USA TODAY APIs, visit the <a href="http://developer.usatoday.com" target="_blank">Developer's Network</a>.<br/>
+      </div>
 
       </div>
       </div>
