@@ -1,51 +1,55 @@
 body
 {
-   margin: 0;
+    margin: 0;
    /*font-family: 'Lusitana', Arial, Helvetica, Geneva, sans-serif;*/
-   font-family: 'Source Sans Pro', Arial, Helvetica, Geneva, sans-serif;
-   font-size: 12px;
-   text-align: left;
-   vertical-align: top;
-   background: #FFFFFF;
+    font-family: 'Source Sans Pro', Arial, Helvetica, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: top;
+    background: #FFFFFF;
 }
 
 h1
 {
-	font-size: 46px;
-	letter-spacing: -2px;
-	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+    font-size: 46px;
+    letter-spacing: -2px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 
 h2
 {
-	font-size: 22px;
-	letter-spacing: -1px;
-	padding: 0 0 0 0;
-	margin: 0 0 0 0;
+    font-size: 22px;
+    letter-spacing: -1px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
 }
 
-a:link, a:visited
-{
-	text-decoration: underline;
-	color: #000000;
+a {
+    color: #007998;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+    text-decoration: none;
 }
-
-a:hover
-{
-	text-decoration: underline;
+a:hover,
+a:focus,
+a:active {
+    color: rgba(0, 121, 152, 0.5);
 }
 
 p
 {
-	padding: 10px 0 0 0;
+    padding: 10px 0 0 0;
 }
 
 #container
 {
-	margin: 10px auto 0 auto;
+    margin: 10px auto 0 auto;
     width: 100%;
-	background: #FFFFFF;
+    background: #FFFFFF;
 }
 
 #main
@@ -83,3 +87,10 @@ p
 {
     margin: 50px 0 0 0;
 }
+
+#copyright
+{
+    margin: 30px 0 0 0;
+    font-size: 14px;
+}
+

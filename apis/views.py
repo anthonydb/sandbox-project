@@ -52,5 +52,5 @@ def BookListAPIView(request):
         mail_admins('Books API', 'Looks like the Books API failed.')
 
     return render_to_response('booklist.html',
-                            {'top_list': top_list, 'date_dict': date_dict},
-                            context_instance=RequestContext(request))
+                              {'top_list': top_list, 'date_dict': date_dict},
+                              context_instance=RequestContext(request))
