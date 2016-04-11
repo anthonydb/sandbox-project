@@ -19,8 +19,8 @@ def QuotesHomeView(request):
     random_index = randint(0, count - 1)
     random_quote = Quote.objects.all()[random_index]
     return render_to_response('quotes_home.html',
-                            {'random_quote': random_quote},
-                            context_instance=RequestContext(request))
+                              {'random_quote': random_quote},
+                              context_instance=RequestContext(request))
 
 
 # Quote list

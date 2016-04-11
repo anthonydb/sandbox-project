@@ -12,7 +12,7 @@
                 <a href="{{ random_quote.author.get_absolute_url }}">{{ random_quote.author }}</a>
             </div>
             <div id="tag">
-            {% for category in random_quote.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
+                Tags: {% for category in random_quote.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
                 {% if forloop.last %}{% else %}
                 {% ifequal forloop.revcounter0 1 %}&amp; {% else %}, {% endifequal %}
                 {% endif %}
@@ -20,7 +20,7 @@
             <br />
             </div>
          <div id="social">
-             <a href="https://twitter.com/share" class="twitter-share-button" data-via="anthonydb">Tweet</a>
+             <a href="https://twitter.com/share" class="twitter-share-button" data-via="anthonydb"></a>
              <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
              </script>
         </div>
@@ -34,7 +34,7 @@
           setTimeout("showBtn()", 2000); // 1000 = 1 sec
         </script>
         <div id="reloader" style="visibility: hidden">
-            <input class="button" type="submit" onclick="window.location.reload();" value="Fetch Another">
+            <input class="btn" type="submit" onclick="window.location.reload();" value="Fetch another">
         </div>
      </div>
 {% endblock %}

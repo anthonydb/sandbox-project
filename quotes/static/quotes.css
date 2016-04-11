@@ -143,6 +143,7 @@ input.button {
 }
 
 #reloader {
+    margin: 60px 0 0 0;
     padding 0;
 }
 
@@ -173,6 +174,30 @@ input.button {
     font-size: 22px;
     letter-spacing: -1px;
     text-align: left;
+}
+
+/* Button */
+
+.btn {
+    background-color: #007998;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 6px 10px;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #007998;
+}
+.btn:active {
+    position: relative;
+    top: 1px;
 }
 
 /* Miscellany */
