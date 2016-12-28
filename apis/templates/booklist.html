@@ -6,7 +6,7 @@
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static 'api.css'%}" />
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
-    <title>Booklist API test</title>
+    <title>Books API Example</title>
     <meta name="description" content="Book List API">
 
     <!-- Replace the Google code with your own account -->
@@ -28,21 +28,21 @@
       <div id="container">
       <div id="main">
 
-      <h2>USA TODAY Best-Selling Books list</h2>
+      <h2>API Example: The New York Times Books API</h2>
       <div id="chatter">
-      The top 20 books for {{ date_dict.month }}/{{ date_dict.day }}/{{ date_dict.year }}, fetched from the <a href="http://usatoday30.usatoday.com/api/books/" target="_blank">Best-Selling Books API</a>. This page automatically updates with a newer list each Thursday. The Django views.py that calls and parses the API is available on <a href="https://github.com/anthonydb/sandbox-project/blob/master/apis/views.py" target="_blank">Github</a>.
+      This page shows the current top 20 "Combined Print and E-Book Nonfiction" titles for {{ list_date }}, fetched from <a href="https://developer.nytimes.com/books_api.json" target="_blank">The New York Times Books API</a>. To see the Django views.py that calls and parses the API, visit the code on <a href="https://github.com/anthonydb/sandbox-project/blob/master/apis/views.py" target="_blank">Github</a>.
       </div>
 
       <div id="list">
         <ul>
         {% for entry in top_list %}
-            <li>{{ entry.rank}}. <b>{{ entry.title }}</b>, {{ entry.author }} {{entry.class}}</li>
+            <li>{{ entry.rank}}. <b><a href="{{ entry.amazon_link }}">{{ entry.title }}</a></b>, {{ entry.author }}</li>
         {% endfor %}
         </ul>
       </div>
 
       <div id="tag">
-         For information on USA TODAY APIs, visit the <a href="http://developer.usatoday.com" target="_blank">Developer's Network</a>.<br/>
+         <a href="http://developer.nytimes.com"><img src="/static/poweredby_nytimes_200a.png" /></a>
       </div>
 
       </div>

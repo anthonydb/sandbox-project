@@ -16,15 +16,19 @@ h1
 }
 
 
-a:link, a:visited
-{
-    text-decoration: underline;
-    color: #000000;
+a {
+    color: #007998;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
+    text-decoration: none;
 }
-
-a:hover
-{
-    text-decoration: underline;
+a:hover,
+a:focus,
+a:active {
+    color: rgba(0, 121, 152, 0.5);
 }
 
 p
