@@ -30,8 +30,13 @@ def BookListAPIView(request):
         for book in nyt_list_response['results']:
             books_dict = {}
             books_dict['rank'] = str(book['rank'])
+            if book['rank_last_week'] == 0:
+                books_dict['rank_lw'] = '-'
+            else:
+                books_dict['rank_lw'] = str(book['rank_last_week'])
             books_dict['title'] = book['book_details'][0]['title']
             books_dict['author'] = book['book_details'][0]['author']
+            books_dict['description'] = book['book_details'][0]['description']
             books_dict['amazon_link'] = book['amazon_product_url']
             top_list.append(books_dict)
 

@@ -36,7 +36,7 @@
       <div id="list">
         <ul>
         {% for entry in top_list %}
-            <li>{{ entry.rank}}. <b><a href="{{ entry.amazon_link }}">{{ entry.title }}</a></b>, {{ entry.author }}</li>
+            <li>{{ entry.rank }} ({{ entry.rank_lw }}). <a href="{{ entry.amazon_link }}">{{ entry.title }}</a>, {{ entry.author }} / {{ entry.description }}</li>
         {% endfor %}
         </ul>
       </div>

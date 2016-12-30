@@ -15,7 +15,6 @@ h1
     padding: 0 0 0 0;
 }
 
-
 a {
     color: #007998;
     -webkit-transition: color 0.25s ease-in-out;
@@ -69,8 +68,8 @@ p
 }
 
 #list ul li {
-    padding: 4px 0 3px 0;
-    line-height: 18px;
+    padding: 4px 0 4px 0;
+    line-height: 20px;
 }
 
 #chatter
