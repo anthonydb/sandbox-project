@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response
 from django.core.mail import mail_admins
 import requests
 from .keys import *
-from datetime import date
+from datetime import datetime
 
 
 class APIHomeView(TemplateView):
@@ -22,7 +22,8 @@ def BookListAPIView(request):
     try:
         r = requests.get(base_url, params=payload)
         nyt_list_response = r.json()
-        nyt_list_date = nyt_list_response['results'][0]['bestsellers_date']
+        nyt_api_list_date_string = nyt_list_response['results'][0]['bestsellers_date']
+        nyt_list_date = datetime.strptime(nyt_api_list_date_string, '%Y-%m-%d').strftime('%m/%d/%Y')
 
         # A list of dicts for titles
         top_list = []
