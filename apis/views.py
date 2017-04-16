@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView
 from django.template import RequestContext
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.core.mail import mail_admins
 import requests
 from .keys import *
@@ -48,6 +48,7 @@ def BookListAPIView(request):
         top_list.append(books_dict)
         mail_admins('Books API', 'Looks like the Books API failed.')
 
-    return render_to_response('booklist.html',
-                              {'top_list': top_list, 'list_date': nyt_list_date},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'booklist.html',
+                  {'top_list': top_list,
+                   'list_date': nyt_list_date})

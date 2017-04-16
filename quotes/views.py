@@ -1,7 +1,7 @@
 from django.views.generic import ListView, TemplateView
 from django.template import RequestContext
 from quotes.models import Quote, Author, Categories
-from django.shortcuts import get_object_or_404, render_to_response
+from django.shortcuts import get_object_or_404, render
 from random import randint
 from django.db.models import Count
 
@@ -18,9 +18,9 @@ def QuotesHomeView(request):
     count = Quote.objects.all().aggregate(count=Count('id'))['count']
     random_index = randint(0, count - 1)
     random_quote = Quote.objects.all()[random_index]
-    return render_to_response('quotes_home.html',
-                              {'random_quote': random_quote},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'quotes_home.html',
+                  {'random_quote': random_quote})
 
 
 # Quote list
@@ -33,9 +33,9 @@ class QuotesListView(ListView):
 # Quote detail
 def QuotesDetailView(request, quoteslug):
     quote = get_object_or_404(Quote, slug=quoteslug)
-    return render_to_response('quotes_detail.html',
-                              {'quote': quote},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'quotes_detail.html',
+                  {'quote': quote})
 
 
 # Author list
@@ -50,9 +50,9 @@ def AuthorQuotesView(request, authorslug):
     author = get_object_or_404(Author, slug__iexact=authorslug)
     author_quote_list = Quote.objects.filter(author=author)
 
-    return render_to_response('author_quote_list.html',
-                              {'author_quote_list': author_quote_list},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'author_quote_list.html',
+                  {'author_quote_list': author_quote_list})
 
 
 # Categories views
@@ -66,10 +66,10 @@ def CategoriesQuotesView(request, categoryslug):
     category = get_object_or_404(Categories, slug__iexact=categoryslug)
     categories_quote_list = Quote.objects.filter(categories=category).order_by('author')
     category_name = Categories.objects.filter(slug=categoryslug)
-    return render_to_response('categories_quote_list.html',
-                              {'categories_quote_list': categories_quote_list,
-                               'categories': category_name},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'categories_quote_list.html',
+                  {'categories_quote_list': categories_quote_list,
+                   'categories': category_name})
 
 
 # Submit thanks
