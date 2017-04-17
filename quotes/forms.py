@@ -1,6 +1,6 @@
 from django.template import RequestContext
 from quotes.models import Submission, Quote
-from django.shortcuts import render_to_response
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django import forms
 from django.forms import ModelForm, Textarea
@@ -28,14 +28,15 @@ def submit_quote(request):
         if form.is_valid():
             obj = form.save(commit=False)
             obj.ip_address = request.META.get('REMOTE_ADDR', 'Unknown')
-            obj.misc_headers = str(request.META.get('REMOTE_HOST', 'Unknown')) + '|' + str(request.META.get('HTTP_USER_AGENT', 'Unknown'))
+            obj.misc_headers = str(request.META.get('REMOTE_HOST', 'Unknown'))\
+                + '|' + str(request.META.get('HTTP_USER_AGENT', 'Unknown'))
             obj.save()
             return HttpResponseRedirect('/words/suggest/thanks/')
     else:
         form = SuggestForm()
-    return render_to_response('suggest.html',
-                              {'form': form},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'suggest.html',
+                  {'form': form})
 
 
 class SearchForm(ModelForm):
@@ -59,11 +60,12 @@ def search_quotes(request):
             results = Quote.objects.filter(quote__icontains=term).order_by('quote')
             if not results:
                 results = ['None']
-            return render_to_response('search.html',
-                                      {'form': form, 'results_list': results},
-                                      context_instance=RequestContext(request))
+            return render(request,
+                          'search.html',
+                          {'form': form,
+                           'results_list': results})
     else:
         form = SearchForm()
-    return render_to_response('search.html',
-                              {'form': form},
-                              context_instance=RequestContext(request))
+    return render(request,
+                  'search.html',
+                  {'form': form})
