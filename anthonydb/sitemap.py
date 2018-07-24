@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap, GenericSitemap
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from quotes.models import Author, Categories, Quote
 
 author_dict = {

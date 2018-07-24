@@ -1,5 +1,6 @@
 # from random import randint
 from django.db import models
+from django.urls import reverse
 # from django.db.models import Count, Max
 
 
@@ -31,9 +32,8 @@ class Author(models.Model):
     def __str__(self):
         return self.displayname
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('author_quotes', (), {'authorslug': self.slug})
+        return reverse('author_quotes', args=[self.slug])
 
 
 class Categories(models.Model):
@@ -47,15 +47,14 @@ class Categories(models.Model):
     def __str__(self):
         return self.category
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('category_quotes', (), {'categoryslug': self.slug})
+        return reverse('category_quotes', args=[self.slug])
 
 
 class Quote(models.Model):
     quote = models.TextField()
     source = models.CharField(max_length=400)
-    author = models.ForeignKey(Author)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     categories = models.ManyToManyField(Categories)
     slug = models.SlugField(unique=True)
     create_date = models.DateTimeField(auto_now=True)
@@ -65,9 +64,8 @@ class Quote(models.Model):
     def __str__(self):
         return self.quote
 
-    @models.permalink
     def get_absolute_url(self):
-        return ('quote_detail', (), {'quoteslug': self.slug})
+        return reverse('quote_detail', args=[self.slug])
 
 
 class Submission(models.Model):
