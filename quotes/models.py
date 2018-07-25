@@ -20,17 +20,17 @@ class QuoteManager(models.Manager):
 
 
 class Author(models.Model):
-    firstname = models.CharField(max_length=100)
-    lastname = models.CharField(max_length=100)
-    displayname = models.CharField(max_length=200)
-    brfbio = models.CharField('Brief bio', max_length=255)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    display_name = models.CharField(max_length=200)
+    brief_bio = models.CharField('Brief bio', max_length=255)
     slug = models.SlugField(unique=True)
 
     class Meta:
-        ordering = ['lastname']
+        ordering = ['last_name']
 
     def __str__(self):
-        return self.displayname
+        return self.display_name
 
     def get_absolute_url(self):
         return reverse('author_quotes', args=[self.slug])

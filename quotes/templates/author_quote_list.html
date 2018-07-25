@@ -6,19 +6,19 @@
 {% block content %}
     <div id="list">
     <div id="sectiondescriptor">
-    <b>{{ author_quote_list.0.author }}:</b> {{ author_quote_list.0.author.brfbio }}
+    <b>{{ author_quote_list.0.author }}:</b> {{ author_quote_list.0.author.brief_bio }}
     </div>
     <ul>
         {% for quote in author_quote_list %}
-            <li>{{ quote.quote }} <span id="tagelements"><a href="{{ quote.get_absolute_url }}">&#182</a> | 
+            <li>{{ quote.quote }} <span id="tagelements"><a href="{{ quote.get_absolute_url }}">&#182</a> |
             {% for category in quote.categories.all %} <a href="{{ category.get_absolute_url }}">{{ category.category }}</a>
                 {% if forloop.last %}{% else %}
                 {% ifequal forloop.revcounter0 1 %}&amp; {% else %}, {% endifequal %}
                 {% endif %}
-                {% endfor %}  
+                {% endfor %}
             </li>
             </span>
        {% endfor %}
      </ul>
-</div>     
+</div>
 {% endblock %}

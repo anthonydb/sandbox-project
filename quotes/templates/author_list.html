@@ -10,7 +10,7 @@
        </div>
     <ul>
         {% for author in authors_list %}
-            <li><a href="{{ author.get_absolute_url }}">{{ author.lastname }}, {{ author.firstname }}</a>. {{ author.brfbio }}</li>
+            <li><a href="{{ author.get_absolute_url }}">{{ author.last_name }}, {{ author.first_name }}</a>. {{ author.brief_bio }}</li>
         {% endfor %}
      </ul>
      </div>

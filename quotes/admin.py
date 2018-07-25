@@ -3,8 +3,8 @@ from django.contrib import admin
 
 
 class AuthorAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("displayname",)}
-    list_display = ('displayname', 'brfbio', 'firstname', 'lastname')
+    prepopulated_fields = {"slug": ("display_name",)}
+    list_display = ('display_name', 'brief_bio', 'first_name', 'last_name')
 
 
 class CategoriesAdmin(admin.ModelAdmin):
