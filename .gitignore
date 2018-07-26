@@ -7,4 +7,4 @@
 __old__*
 *.txt
 jquery-*
-/apis/keys.py
+/nytbooklist/keys.py
