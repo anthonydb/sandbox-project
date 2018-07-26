@@ -7,11 +7,11 @@ from .keys import *
 from datetime import datetime
 
 
-class APIHomeView(TemplateView):
-    template_name = 'apihome.html'
+class BooklistHomeView(TemplateView):
+    template_name = 'booklist_home.html'
 
 
-def BookListAPIView(request):
+def BookListNonfictionView(request):
     # Construct API url
     api_key = nyt_api
     base_url = 'https://api.nytimes.com/svc/books/v3/lists.json'
@@ -49,6 +49,6 @@ def BookListAPIView(request):
         mail_admins('Books API', 'Looks like the Books API failed.')
 
     return render(request,
-                  'booklist.html',
+                  'nonfiction_list.html',
                   {'top_list': top_list,
                    'list_date': nyt_list_date})

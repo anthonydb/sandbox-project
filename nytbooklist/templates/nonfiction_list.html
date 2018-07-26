@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width">
     {% load staticfiles %}
-    <link rel="stylesheet" type="text/css" href="{% static 'api.css'%}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'booklist.css'%}" />
     <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <title>anthonydb.com Books API Example</title>
-    <meta name="description" content="Book List API">
+    <meta name="description" content="New York Times Nonfiction Bestsellers">
 
     <!-- Replace the Google code with your own account -->
     <script>
@@ -25,9 +25,9 @@
       <div id="container">
       <div id="main">
 
-      <h2>API Example: The New York Times Books API</h2>
+      <h2>The New York Times: Nonfiction Bestsellers</h2>
       <div id="chatter">
-      This page shows the current top 15 "Combined Print and E-Book Nonfiction" titles for {{ list_date }}, fetched from <a href="https://developer.nytimes.com/books_api.json" target="_blank">The New York Times Books API</a>. To see the Django views.py that calls and parses the API, visit the code on <a href="https://github.com/anthonydb/sandbox-project/blob/master/apis/views.py" target="_blank">Github</a>.
+      The top 15 "Combined Print and E-Book Nonfiction" titles for {{ list_date }}, fetched from <a href="https://developer.nytimes.com/books_api.json" target="_blank">The New York Times Books API</a>.
       </div>
 
       <div id="list">
