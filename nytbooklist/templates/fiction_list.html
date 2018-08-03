@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width">
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'booklist.css'%}" />
+    <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <title>anthonydb.com Books API Example</title>
+    <meta name="description" content="New York Times Fiction Bestsellers">
+
+    <!-- Replace the Google code with your own account -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-30019446-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</head>
+<body>
+      <div id="container">
+      <div id="main">
+
+      <h2>The New York Times: Fiction Bestsellers</h2>
+      <div id="chatter">
+      The top 15 "Combined Print and E-Book Fiction" titles for {{ list_date }}, fetched from <a href="https://developer.nytimes.com/books_api.json" target="_blank">The New York Times Books API</a>.
+      </div>
+
+      <div id="list">
+        <ul>
+        {% for entry in top_list %}
+            <li>{{ entry.rank }} ({{ entry.rank_lw }}). <a href="{{ entry.amazon_link }}">{{ entry.title }}</a>, {{ entry.author }} / {{ entry.description }}</li>
+        {% endfor %}
+        </ul>
+      </div>
+
+      <div id="tag">
+         <a href="http://developer.nytimes.com"><img src="/static/poweredby_nytimes_200a.png" /></a>
+      </div>
+
+      </div>
+      </div>
+</body>
+</html>

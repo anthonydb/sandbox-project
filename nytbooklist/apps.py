@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class ApisConfig(AppConfig):
-    name = 'apis'
+class NYTBooklistConfig(AppConfig):
+    name = 'nytbooklist'
