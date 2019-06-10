@@ -1,6 +1,7 @@
 .DS_Store
 *.pyc
 *.db
+/temp/
 /anthonydb/all_static/
 /anthonydb/local_settings.py
 /anthonydb/urls_base.py
